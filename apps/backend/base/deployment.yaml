@@ -13,7 +13,7 @@ spec:
         app: hello-go
     spec:
       containers:
-        - name: backend
-          image: hello-world
+        - name: hello-go
+          image: sortren/hello-go:1.0
           ports:
             - containerPort: 8080

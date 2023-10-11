@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/Sortren/hello-go-eks.git
         targetRevision: HEAD
-        path: apps/backend/overlays/{{cluster}}
+        path: apps/**/overlays/{{cluster}}
       destination:
         server: '{{url}}'
         namespace: '{{namespace}}'
