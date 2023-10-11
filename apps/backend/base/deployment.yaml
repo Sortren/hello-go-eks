@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-go
+  name: backend
 spec:
   selector:
     matchLabels:
-      app: hello-go
+      app: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: hello-go
+        app: backend
     spec:
       containers:
-        - name: hello-go
+        - name: backend
           image: sortren/hello-go:1.0
           ports:
             - containerPort: 8080

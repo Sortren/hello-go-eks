@@ -1,0 +1,12 @@
+{
+  "appName": "backend",
+  "environment": "dev",
+  "userGivenName": "backend",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/backend/overlays/dev",
+  "srcRepoURL": "https://github.com/Sortren/hello-go-eks.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
