@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: hello-go
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: dev
+            url: https://kubernetes.default.svc
+            namespace: dev
+          - cluster: prod
+            url: https://kubernetes.default.svc
+            namespace: prod
+  template:
+    metadata:
+      name: '{{cluster}}-hello-go'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Sortren/hello-go-eks.git
+        targetRevision: HEAD
+        path: apps/**/overlays/{{cluster}}
+      destination:
+        server: '{{url}}'
+        namespace: '{{namespace}}'
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
