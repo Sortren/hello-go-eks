@@ -4,4 +4,4 @@ resources:
   - ../../base
 images:
   - name: sortren/hello-go
-    newTag: sortren/hello-go:1.1
+    newTag: '1.1'
